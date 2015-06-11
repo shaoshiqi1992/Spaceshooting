@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+[System.Serializable]
+public class Boundary
+{
+	public float xMin;
+	public float xMax;
+	public float zMin;
+	public float zMax;
+}
 public class PlayerController : MonoBehaviour {
-	[System.Serializable]
-	public class Boundary
-	{
-		public float xMin;
-		public float xMax;
-		public float zMin;
-		public float zMax;
-	}
+
 	public float speed;
 	public Boundary boundary;
 	public GameObject shot;
@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetButton ("Jump") && Time.time > nextFire) {
 			nextFire = Time.time + fireRate;
 			Instantiate (shot,shotSpawn.position,shotSpawn.rotation);
-
+			GetComponent<AudioSource>().Play();
 		}
 	}
 
