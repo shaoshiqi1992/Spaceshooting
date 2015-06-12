@@ -62,7 +62,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void GameOver(){
-		gameOverText.text = "Game Over!";
+		gameOverText.text = "Game Over";
 		gameOver=true;
 	}
 }
